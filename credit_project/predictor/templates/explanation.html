@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Explanation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: url("/static/bg.jpg") no-repeat center center/cover;
+            min-height: 100vh;
+        }
+
+        .overlay {
+            min-height: 100vh;
+            width: 100%;
+            background: rgba(0,0,0,0.65);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            color: white;
+        }
+
+        .navbar h2 {
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4da3ff;
+        }
+
+        /* Explanation Card */
+        .explain-card {
+            width: 550px;
+            margin: 90px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+        }
+
+        .explain-card h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .prediction {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4da3ff;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #1b6fdc;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>CreditAI</h2>
+
+        <div class="nav-links">
+            <a href="/home/">Dashboard</a>
+            <a href="/input/">Prediction</a>
+            <a href="/train/">Train Models</a>
+            <a href="/about/">About</a>
+            <a href="/logout/">Logout</a>
+        </div>
+    </div>
+
+    <!-- Explanation Section -->
+    <div class="explain-card">
+
+        <h3>Explainable AI Decision</h3>
+
+        {% if error %}
+            <p>{{error}}</p>
+        {% else %}
+
+            <p class="prediction"><b>Prediction:</b> {{prediction}}</p>
+
+            <p><b>Reasons for this decision:</b></p>
+
+            <ul>
+                {% for r in reasons %}
+                <li>{{r}}</li>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+
+        <div class="btn-container">
+            <a href="/home/"><button class="btn">Back to Dashboard</button></a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 CreditAI • Explainable AI Insights
+    </div>
+
+</div>
+
+</body>
+</html>

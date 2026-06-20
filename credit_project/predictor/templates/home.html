@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: url("/static/bg.jpg") no-repeat center center/cover;
+        }
+
+        .overlay {
+            height: 100vh;
+            width: 100%;
+            background: rgba(0,0,0,0.65);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            color: white;
+        }
+
+        .navbar h2 {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4da3ff;
+        }
+
+        /* Main Content */
+        .content {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 20px;
+            color: #ddd;
+            max-width: 700px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>CreditAI Dashboard</h2>
+
+        <div class="nav-links">
+            <a href="/train/">Train Models</a>
+            <a href="/input/">Prediction</a>
+            <a href="/about/">About</a>
+            <a href="/logout/">Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Welcome to Credit Risk Prediction System</h1>
+
+        <p>
+            This platform uses Machine Learning models and Explainable AI techniques
+            to evaluate loan applications, predict credit risk, and provide transparent
+            financial decision insights for better risk management.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2026 CreditAI • Intelligent Financial Risk Analysis Platform
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Training</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: url("/static/bg.jpg") no-repeat center center/cover;
+        }
+
+        .overlay {
+            height: 100vh;
+            width: 100%;
+            background: rgba(0,0,0,0.65);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            color: white;
+        }
+
+        .navbar h2 {
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4da3ff;
+        }
+
+        /* Center Card */
+        .content {
+            height: calc(100vh - 80px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 420px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #4da3ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1b6fdc;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>CreditAI</h2>
+
+        <div class="nav-links">
+            <a href="/home/">Dashboard</a>
+            <a href="/input/">Prediction</a>
+            <a href="/about/">About</a>
+            <a href="/logout/">Logout</a>
+        </div>
+    </div>
+
+    <!-- Training Content -->
+    <div class="content">
+        <div class="card">
+            <h2>Model Training</h2>
+            <p>Click the button below to train all machine learning models using the dataset.</p>
+
+            <form action="/start-training/" method="POST">
+                {% csrf_token %}
+                <button type="submit">Start Training</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 CreditAI • Model Training Interface
+    </div>
+
+</div>
+
+</body>
+</html>

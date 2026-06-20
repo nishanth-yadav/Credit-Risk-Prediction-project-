@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Risk Prediction</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: url("/static/bg.jpg") no-repeat center center/cover;
+        }
+
+        /* Dark Overlay */
+        .overlay {
+            height: 100vh;
+            width: 100%;
+            background: rgba(0,0,0,0.65);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            color: white;
+        }
+
+        .navbar h2 {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4da3ff;
+        }
+
+        /* Center Content */
+        .content {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            color: #ddd;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 28px;
+            margin: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login {
+            background-color: #4da3ff;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background-color: #1b6fdc;
+        }
+
+        .btn-register {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #4da3ff;
+        }
+
+        .btn-register:hover {
+            background-color: #4da3ff;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>CreditAI</h2>
+
+        <div class="nav-links">
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Credit Risk Prediction System</h1>
+        <p>AI-Driven Loan Risk Evaluation & Explainable Decision Intelligence</p>
+
+        <div>
+            <a href="/login/">
+                <button class="btn btn-login">Login</button>
+            </a>
+
+            <a href="/register/">
+                <button class="btn btn-register">Create Account</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2026 CreditAI • Machine Learning Powered Financial Risk Analysis
+    </div>
+
+</div>
+
+</body>
+</html>
